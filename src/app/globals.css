@@ -3,6 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #0052cc;
+  --primary-foreground: #ffffff;
+  --secondary: #f6f9fc;
+  --secondary-foreground: #0a0a0a;
+  --accent: #007fff;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4d4f;
+  --destructive-foreground: #ffffff;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --border: #e5e7eb;
+  --radius: 0.5rem;
 }
 
 @theme inline {
@@ -16,11 +28,44 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #3385ff;
+    --primary-foreground: #ffffff;
+    --secondary: #1a1a1a;
+    --secondary-foreground: #ffffff;
+    --accent: #0070f3;
+    --accent-foreground: #ffffff;
+    --destructive: #ff4d4f;
+    --destructive-foreground: #ffffff;
+    --muted: #1a1a1a;
+    --muted-foreground: #a3a3a3;
+    --border: #333333;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+* {
+  border-color: var(--border);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
 }
