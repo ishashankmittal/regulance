@@ -1,8 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Regulance - Making Regulatory Compliance Invisible
 
-## Getting Started
+This repository contains the landing page for Regulance, an AI-powered regulatory compliance platform for Indian startups and businesses. The website is built using Next.js and showcases Regulance's mission to provide intelligent Agentic AI systems that monitor, interpret, and summarize updates from MCA, RBI, SEBI, GST, and other authorities.
 
-First, run the development server:
+![Regulance Logo](public/regulance-logo.png)
+
+## About Regulance
+
+Regulance is building the compliance layer of India with an agent-first approach that makes regulatory compliance invisible for startups and SMEs. Our platform helps businesses stay ahead of regulatory changes with:
+
+- **Agentic AI Monitoring** - Intelligent agents continuously monitor and interpret regulatory updates that matter to your business
+- **Proactive Compliance Management** - Identify compliance requirements before deadlines
+- **Real-time Regulatory Intelligence** - Get contextual, business-specific notifications about new regulations
+- **Seamless Team Collaboration** - Connect legal, CA, and CS teams within the platform
+
+## Development
+
+This website is built with [Next.js](https://nextjs.org/) and uses modern web technologies to provide an elegant user experience.
+
+### Getting Started
+
+1. Clone this repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +38,25 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js** - React framework for building the website
+- **Tailwind CSS** - For styling and responsive design
+- **TypeScript** - For type-safe code
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The website is configured for easy deployment on platforms like Vercel. To deploy:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your changes to the repository
+2. Connect the repository to Vercel
+3. Vercel will automatically build and deploy the website
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Connect with Regulance
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [LinkedIn](https://www.linkedin.com/company/regulance/)
+- [Website](https://www.regulance.com)
