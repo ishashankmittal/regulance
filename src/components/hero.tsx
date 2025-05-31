@@ -31,7 +31,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             Regulance provides intelligent AI agents that proactively monitor, interpret, and summarize
-            regulatory updates from MCA, RBI, SEBI, GST, and other authorities. We're building the compliance layer of India.
+            regulatory updates from MCA, RBI, SEBI, GST, and other authorities. We are building the compliance layer of India.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg" onClick={() => window.location.href = "#cta"}>

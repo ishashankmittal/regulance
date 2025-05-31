@@ -1,6 +1,6 @@
 # Regulance - Making Regulatory Compliance Invisible
 
-This repository contains the landing page for Regulance, an AI-powered regulatory compliance platform for Indian startups and businesses. The website is built using Next.js and showcases Regulance's mission to provide intelligent Agentic AI systems that monitor, interpret, and summarize updates from MCA, RBI, SEBI, GST, and other authorities.
+This repository contains the landing page for Regulance, an AI-powered regulatory compliance platform for Indian startups and businesses. The website is built using Next.js and showcases Regulance mission to provide intelligent Agentic AI systems that monitor, interpret, and summarize updates from MCA, RBI, SEBI, GST, and other authorities.
 
 ![Regulance Logo](public/regulance-logo.png)
 

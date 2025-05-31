@@ -35,7 +35,7 @@ const features = [
   {
     name: "Invisible Compliance Layer",
     description:
-      "We're building the compliance infrastructure that works behind the scenes, letting you focus on growing your business rather than paperwork.",
+      "We are building the compliance infrastructure that works behind the scenes, letting you focus on growing your business rather than paperwork.",
     icon: Zap,
   },
 ];
