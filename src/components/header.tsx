@@ -8,9 +8,7 @@ import { useState } from "react";
 
 const navigation = [
   { name: "Features", href: "#features" },
-  { name: "How it works", href: "#how-it-works" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Pricing", href: "#pricing" },
+  { name: "How it works", href: "#cta" },
 ];
 
 export function Header() {
@@ -40,11 +38,8 @@ export function Header() {
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center gap-4">
-              <Button variant="ghost" onClick={() => window.location.href = "/login"}>
-                Sign in
-              </Button>
-              <Button onClick={() => window.location.href = "/register"}>
-                Get started
+              <Button onClick={() => window.location.href = "#cta"}>
+                Join waitlist
               </Button>
             </div>
             <Button
@@ -74,11 +69,8 @@ export function Header() {
               </Link>
             ))}
             <div className="flex flex-col gap-2 mt-4">
-              <Button variant="outline" className="w-full" onClick={() => window.location.href = "/login"}>
-                Sign in
-              </Button>
-              <Button className="w-full" onClick={() => window.location.href = "/register"}>
-                Get started
+              <Button className="w-full" onClick={() => window.location.href = "#cta"}>
+                Join waitlist
               </Button>
             </div>
           </div>

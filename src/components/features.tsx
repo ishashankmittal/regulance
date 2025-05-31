@@ -3,39 +3,39 @@ import { Brain, Shield, Clock, Users, FileText, Zap } from "lucide-react";
 
 const features = [
   {
-    name: "AI-Powered Monitoring",
+    name: "Agentic AI Monitoring",
     description:
-      "Intelligent agents continuously monitor regulatory updates from MCA, RBI, SEBI, GST, and other authorities.",
+      "Intelligent agents continuously monitor and interpret MCA, GST, RBI, SEBI, and DPDP regulatory updates that matter specifically to your business.",
     icon: Brain,
   },
   {
-    name: "Simplified Compliance",
+    name: "Proactive Compliance Management",
     description:
-      "Track filings, deadlines, and regulatory requirements in one centralized platform.",
+      "Our system identifies compliance requirements before deadlines, providing alerts and guided workflows to keep you ahead of regulatory changes.",
     icon: Shield,
   },
   {
-    name: "Real-time Updates",
+    name: "Real-time Regulatory Intelligence",
     description:
-      "Stay informed about regulatory changes with real-time notifications and alerts.",
+      "Stay informed with contextual, business-specific notifications about new regulations and compliance obligations when they happen.",
     icon: Clock,
   },
   {
-    name: "Team Collaboration",
+    name: "Seamless Team Collaboration",
     description:
-      "Seamlessly collaborate with legal, CA, and CS teams within the platform.",
+      "Connect your legal, CA, and CS teams within the platform, eliminating fragmented workflows and WhatsApp coordination.",
     icon: Users,
   },
   {
-    name: "Standardized Guidance",
+    name: "Standardized Legal Guidance",
     description:
-      "Receive clear, actionable guidance grounded in current Indian law.",
+      "Receive clear, actionable guidance grounded in current Indian law, customized to your specific business requirements.",
     icon: FileText,
   },
   {
-    name: "Proactive Compliance",
+    name: "Invisible Compliance Layer",
     description:
-      "Identify and address compliance issues before they become problems.",
+      "We're building the compliance infrastructure that works behind the scenes, letting you focus on growing your business rather than paperwork.",
     icon: Zap,
   },
 ];
@@ -44,7 +44,7 @@ export function Features() {
   return (
     <section
       id="features"
-      className="py-24 bg-secondary"
+      className="py-24 bg-gradient-mesh"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:text-center">
@@ -53,8 +53,8 @@ export function Features() {
             Everything you need for regulatory compliance
           </p>
           <p className="mt-6 text-lg text-muted-foreground">
-            Regulance simplifies the complex world of Indian regulatory compliance 
-            with intelligent AI tools and streamlined workflows.
+            Regulance tackles the complexity of Indian regulatory requirements with 
+            AI-powered agents and streamlined workflows designed specifically for startups and SMEs.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

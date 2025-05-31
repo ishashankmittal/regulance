@@ -6,7 +6,11 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <div className="relative isolate pt-14">
+    <div className="relative isolate pt-14 bg-hero">
+      <div className="hero-pattern"></div>
+      <div className="hero-decor-1"></div>
+      <div className="hero-decor-2"></div>
+      
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
@@ -23,15 +27,15 @@ export function Hero() {
       <Container className="py-32 sm:py-40">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            AI-Powered Regulatory Compliance for Indian Businesses
+            Making Regulatory Compliance Invisible
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Regulance simplifies compliance by monitoring, interpreting, and summarizing
-            regulatory updates from MCA, RBI, SEBI, GST, and other authorities.
+            Regulance provides intelligent AI agents that proactively monitor, interpret, and summarize
+            regulatory updates from MCA, RBI, SEBI, GST, and other authorities. We're building the compliance layer of India.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button size="lg" onClick={() => window.location.href = "/register"}>
-              Get started
+            <Button size="lg" onClick={() => window.location.href = "#cta"}>
+              Join waitlist
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button
