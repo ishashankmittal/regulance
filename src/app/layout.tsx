@@ -16,7 +16,26 @@ export const metadata: Metadata = {
   title: "Regulance - AI-Powered Regulatory Compliance for Indian Businesses",
   description: "Simplify regulatory compliance with our AI-driven platform that monitors, interprets, and summarizes updates from MCA, RBI, SEBI, GST, and other authorities.",
   icons: {
-    icon: '/favicon.ico',
+    icon: '/regulance.png',
+  },
+  openGraph: {
+    title: "Regulance - AI-Powered Regulatory Compliance for Indian Businesses",
+    description: "Simplify regulatory compliance with our AI-driven platform that monitors, interprets, and summarizes updates from MCA, RBI, SEBI, GST, and other authorities.",
+    images: [
+      {
+        url: '/regulance.png',
+        width: 1200,
+        height: 630,
+        alt: 'Regulance Logo',
+      }
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Regulance - AI-Powered Regulatory Compliance for Indian Businesses",
+    description: "Simplify regulatory compliance with our AI-driven platform that monitors, interprets, and summarizes updates from MCA, RBI, SEBI, GST, and other authorities.",
+    images: ['/regulance.png'],
   },
 };
 

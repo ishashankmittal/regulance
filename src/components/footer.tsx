@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./ui/container";
 
 const navigation = {
@@ -44,7 +45,14 @@ export function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <Image 
+                src="/regulance.png" 
+                alt="Regulance Logo" 
+                width={32} 
+                height={32}
+                className="rounded-sm"
+              />
+              <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text ">
                 Regulance
               </span>
             </Link>

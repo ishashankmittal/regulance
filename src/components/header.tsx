@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
@@ -20,7 +21,14 @@ export function Header() {
         <nav className="flex items-center justify-between py-4">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <Image 
+                src="/regulance.png" 
+                alt="Regulance Logo" 
+                width={32} 
+                height={32}
+                className="rounded-sm"
+              />
+              <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text ">
                 Regulance
               </span>
             </Link>
