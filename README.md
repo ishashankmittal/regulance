@@ -4,6 +4,7 @@ This repository contains the landing page for Regulance, an AI-powered regulator
 
 ![Regulance Logo](public/regulance.png)
 
+
 ## About Regulance
 
 Regulance is building the compliance layer of India with an agent-first approach that makes regulatory compliance invisible for startups and SMEs. Our platform helps businesses stay ahead of regulatory changes with:
