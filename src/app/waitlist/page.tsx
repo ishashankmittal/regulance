@@ -59,6 +59,9 @@ export default function WaitlistPage() {
     setErrorMsg("");
 
     try {
+      if (!db) {
+        throw new Error("Firebase not configured");
+      }
       await addDoc(collection(db, "waitlist"), {
         ...form,
         submittedAt: serverTimestamp(),
