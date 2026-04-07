@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
+import { VideoShowcase } from "@/components/video-showcase";
 import { ComplianceOS } from "@/components/compliance-os";
 import { CTA } from "@/components/cta";
 import { Footer } from "@/components/footer";
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
+      <VideoShowcase />
       <ComplianceOS />
       <CTA />
       <Footer />
