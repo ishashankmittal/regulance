@@ -2,38 +2,55 @@
 
 import { Container } from "./ui/container";
 import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function CTA() {
   return (
-    <section id="cta" className="cta-gradient">
-      <Container className="py-16 sm:py-24">
-        <div className="cta-content mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
-            Make compliance invisible for your business
+    <section id="cta" className="py-24 lg:py-32 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px brand-line opacity-20" />
+
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto"
+        >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-50">
+            Stop bleeding credits.
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80">
-            Join the growing number of Indian startups and SMEs using Regulance to navigate
-            complex regulatory requirements with confidence and efficiency.
+          <p className="mt-5 text-base text-zinc-400 leading-relaxed max-w-lg mx-auto">
+            Every quarter, Indian businesses write off lakhs in unrecovered ITC
+            because reconciliation happens too late. Regulance fixes that.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-white/90"
-              onClick={() => window.location.href = "https://forms.office.com/r/10FbcPgeS7?origin=lprLink"}
+              onClick={() => (window.location.href = "/waitlist")}
+              className="group"
             >
-              Join waitlist
+              Get Early Access
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Button>
             <Button
-              variant="outline"
-              size="lg" 
-              className="border-white text-white hover:bg-primary-foreground/10"
-              onClick={() => window.location.href = "/contact"}
+              variant="ghost"
+              size="lg"
+              onClick={() =>
+                (window.location.href = "mailto:shashank.kumar@regulance.co.in")
+              }
             >
-              Schedule demo
+              shashank.kumar@regulance.co.in
             </Button>
           </div>
-        </div>
+
+          <p className="mt-8 text-xs text-zinc-600">
+            Currently onboarding CA firms managing 50+ clients.
+          </p>
+        </motion.div>
       </Container>
     </section>
   );
-} 
+}

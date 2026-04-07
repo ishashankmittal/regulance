@@ -13,28 +13,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Regulance - AI-Powered Regulatory Compliance for Indian Businesses",
-  description: "Simplify regulatory compliance with our AI-driven platform that monitors, interprets, and summarizes updates from MCA, RBI, SEBI, GST, and other authorities.",
+  title: "Regulance — The Automated Financial Immune System for India",
+  description: "Regulance bridges the gap between Tally and the GST portal. AI agents that autonomously audit ledgers, resolve discrepancies, and defend against scrutiny notices.",
   icons: {
     icon: '/regulance.png',
   },
   openGraph: {
-    title: "Regulance - AI-Powered Regulatory Compliance for Indian Businesses",
-    description: "Simplify regulatory compliance with our AI-driven platform that monitors, interprets, and summarizes updates from MCA, RBI, SEBI, GST, and other authorities.",
+    title: "Regulance — The Automated Financial Immune System for India",
+    description: "Regulance bridges the gap between Tally and the GST portal. AI agents that autonomously audit ledgers, resolve discrepancies, and defend against scrutiny notices.",
     images: [
       {
         url: '/regulance.png',
         width: 1200,
         height: 630,
-        alt: 'Regulance Logo',
+        alt: 'Regulance',
       }
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Regulance - AI-Powered Regulatory Compliance for Indian Businesses",
-    description: "Simplify regulatory compliance with our AI-driven platform that monitors, interprets, and summarizes updates from MCA, RBI, SEBI, GST, and other authorities.",
+    title: "Regulance — The Automated Financial Immune System for India",
+    description: "Regulance bridges the gap between Tally and the GST portal. AI agents that autonomously audit ledgers, resolve discrepancies, and defend against scrutiny notices.",
     images: ['/regulance.png'],
   },
 };

@@ -1,18 +1,18 @@
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
+import { ComplianceOS } from "@/components/compliance-os";
 import { CTA } from "@/components/cta";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="min-h-screen bg-zinc-950">
       <Header />
-      <div className="flex-1">
-        <Hero />
-        <Features />
-        <CTA />
-      </div>
+      <Hero />
+      <Features />
+      <ComplianceOS />
+      <CTA />
       <Footer />
     </main>
   );
