@@ -66,7 +66,7 @@ You can get `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` from Vercel project settings
 
 ### Deployment Behavior
 
-- Every push triggers the workflow.
+- Every push triggers the workflow
 - Pushes to the repository default branch deploy to Production.
 - Pushes to all other branches deploy Preview builds.
 
