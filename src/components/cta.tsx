@@ -46,9 +46,23 @@ export function CTA() {
             </Button>
           </div>
 
-          <p className="mt-8 text-xs text-zinc-600">
-            Currently onboarding CA firms managing 50+ clients.
-          </p>
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <button
+              onClick={() => (window.location.href = "/msme-tracker")}
+              className="group inline-flex flex-col items-center gap-0.5 cursor-pointer bg-transparent border-none"
+            >
+              <span className="text-sm font-medium text-[#1a6d52] group-hover:text-[#238c6a] transition-colors flex items-center gap-1.5">
+                Try Section 43B(h) Tracker
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </span>
+              <span className="text-[10px] text-zinc-600">
+                No login required
+              </span>
+            </button>
+            <p className="text-xs text-zinc-600">
+              Currently onboarding CA firms managing 50+ clients.
+            </p>
+          </div>
         </motion.div>
       </Container>
     </section>

@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 const navigation = [
   { name: "System", href: "#system" },
   { name: "Infrastructure", href: "#moat" },
+  { name: "43B(h) Tracker", href: "/msme-tracker", highlight: true },
 ];
 
 export function Header() {
@@ -50,9 +51,18 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+                className={
+                  (item as { highlight?: boolean }).highlight
+                    ? "text-sm font-medium text-[#1a6d52] hover:text-[#238c6a] transition-colors"
+                    : "text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+                }
               >
                 {item.name}
+                {(item as { highlight?: boolean }).highlight && (
+                  <span className="ml-1.5 text-[9px] font-semibold uppercase tracking-wider bg-[#1a6d52]/10 text-[#1a6d52] px-1.5 py-0.5 rounded-full">
+                    Free
+                  </span>
+                )}
               </Link>
             ))}
           </div>
@@ -92,10 +102,19 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-zinc-500 hover:text-zinc-200 px-3 py-2.5 rounded-lg hover:bg-[#141418] transition-colors"
+                  className={
+                    (item as { highlight?: boolean }).highlight
+                      ? "text-sm font-medium text-[#1a6d52] px-3 py-2.5 rounded-lg hover:bg-[#1a6d52]/10 transition-colors"
+                      : "text-sm text-zinc-500 hover:text-zinc-200 px-3 py-2.5 rounded-lg hover:bg-[#141418] transition-colors"
+                  }
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
+                  {(item as { highlight?: boolean }).highlight && (
+                    <span className="ml-1.5 text-[9px] font-semibold uppercase bg-[#1a6d52]/10 text-[#1a6d52] px-1.5 py-0.5 rounded-full">
+                      Free
+                    </span>
+                  )}
                 </Link>
               ))}
               <div className="mt-4 pt-4 border-t border-[#1e1e22] flex flex-col gap-2">

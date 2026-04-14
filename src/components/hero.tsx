@@ -264,6 +264,26 @@ export function Hero() {
               Talk to Founders
             </Button>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-5"
+          >
+            <button
+              onClick={() => (window.location.href = "/msme-tracker")}
+              className="group inline-flex flex-col items-center gap-0.5 cursor-pointer bg-transparent border-none"
+            >
+              <span className="text-sm font-medium text-[#1a6d52] group-hover:text-[#238c6a] transition-colors flex items-center gap-1.5">
+                Try Section 43B(h) Tracker
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </span>
+              <span className="text-[10px] text-zinc-600">
+                No login required
+              </span>
+            </button>
+          </motion.div>
         </div>
 
         <motion.div
