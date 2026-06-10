@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
@@ -106,6 +106,18 @@ const TOOL_LABELS: Record<string, string> = {
   draft_gst_reply: "Drafted the reply letter",
 };
 
+// Live agent pipeline shown during the ~2-minute run. The backend returns
+// everything in one response (no streaming), so the stepper is timer-driven
+// and holds on the final "Reply" step until the real result arrives.
+const AGENT_STEPS = [
+  { key: "extract",    label: "Extract",    log: "Google ADK Agent Initialized. Processing tax notice PDF..." },
+  { key: "deadline",   label: "Deadline",   log: "Task compute_response_deadline: Calculating response window..." },
+  { key: "ledger",     label: "Ledger",     log: "Task cross_ref_client_data: Querying local ledgers for questioned invoices..." },
+  { key: "precedents", label: "Precedents", log: "Task search_gst_precedents: Provisioning serverless Vertex AI RAG Engine..." },
+  { key: "strategy",   label: "Strategy",   log: "Task generate_legal_strategy: Gemini synthesizing tax precedents..." },
+  { key: "reply",      label: "Reply",      log: "Task draft_gst_reply: Structuring ASMT-11 formal response..." },
+];
+
 export default function LitigationPage() {
   const [uploading, setUploading] = useState(false);
   const [result, setResult] = useState<AnalyseResult | null>(null);
@@ -113,12 +125,34 @@ export default function LitigationPage() {
   const [copied, setCopied] = useState(false);
   const [gateOpen, setGateOpen] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
+  const [agentStep, setAgentStep] = useState(0); // # of completed pipeline steps
+  const stepTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setHasAccess(localStorage.getItem("regulance_early_access") === "true");
     }
+    return () => {
+      if (stepTimer.current) clearInterval(stepTimer.current);
+    };
   }, []);
+
+  const startStepper = () => {
+    setAgentStep(1); // Extract begins immediately
+    stepTimer.current = setInterval(() => {
+      // Advance through tools but hold on the final "Reply" step (index 5)
+      // until the real response arrives.
+      setAgentStep((s) => (s < AGENT_STEPS.length - 1 ? s + 1 : s));
+    }, 13000);
+  };
+
+  const stopStepper = () => {
+    if (stepTimer.current) {
+      clearInterval(stepTimer.current);
+      stepTimer.current = null;
+    }
+    setAgentStep(0);
+  };
 
   const handleGateSuccess = () => {
     setHasAccess(true);
@@ -140,6 +174,7 @@ export default function LitigationPage() {
     setUploading(true);
     setResult(null);
     setDraft("");
+    startStepper();
 
     const form = new FormData();
     form.append("file", file);
@@ -170,6 +205,7 @@ export default function LitigationPage() {
       setResult({ status: "ERROR", error: "Network error. Please try again." });
     }
 
+    stopStepper();
     setUploading(false);
     e.target.value = "";
   };
@@ -321,6 +357,9 @@ export default function LitigationPage() {
             </div>
           )}
         </motion.div>
+
+        {/* Live agent pipeline (during the run) */}
+        {uploading && <AgentProgress step={agentStep} />}
 
         {/* Results */}
         {hasResult && (
@@ -576,6 +615,97 @@ export default function LitigationPage() {
         subtitle="Sign up for early access to analyse unlimited notices, cross-reference your ledger, and track filings."
       />
     </main>
+  );
+}
+
+function AgentProgress({ step }: { step: number }) {
+  // step = number of completed steps; the step at index `step` is in progress.
+  const visible = AGENT_STEPS.slice(0, Math.min(step + 1, AGENT_STEPS.length));
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="dark-card rounded-xl p-5 mb-6"
+    >
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="h-10 w-10 rounded-lg bg-[#1a6d52]/10 flex items-center justify-center shrink-0">
+          <Sparkles className="h-5 w-5 text-[#1a6d52]" />
+        </div>
+        <div>
+          <p className="text-base font-semibold text-zinc-100">
+            Google ADK Autonomous Agent
+          </p>
+          <p className="text-[13px] text-zinc-500">
+            Orchestrating GCP litigation tools…
+          </p>
+        </div>
+      </div>
+
+      {/* Stepper */}
+      <div className="flex items-start justify-between gap-1 mb-6">
+        {AGENT_STEPS.map((s, i) => {
+          const done = i < step;
+          const active = i === step;
+          return (
+            <div
+              key={s.key}
+              className="flex flex-col items-center gap-2 flex-1 relative"
+            >
+              {i < AGENT_STEPS.length - 1 && (
+                <div
+                  className="absolute top-[15px] left-1/2 w-full h-px"
+                  style={{ background: done ? "#1a6d52" : "#1e1e22" }}
+                />
+              )}
+              <div
+                className="relative z-10 h-8 w-8 rounded-full flex items-center justify-center text-[12px] font-semibold"
+                style={{
+                  background: done
+                    ? "#1a6d52"
+                    : active
+                    ? "rgba(26,109,82,0.12)"
+                    : "#141418",
+                  border: `1px solid ${
+                    done || active ? "rgba(26,109,82,0.5)" : "#1e1e22"
+                  }`,
+                  color: done ? "#fff" : active ? "#238c6a" : "#52525b",
+                }}
+              >
+                {done ? (
+                  <Check className="h-4 w-4" />
+                ) : active ? (
+                  <span className="animate-pulse">{i + 1}</span>
+                ) : (
+                  i + 1
+                )}
+              </div>
+              <span
+                className="text-[11px]"
+                style={{ color: done || active ? "#a1a1aa" : "#52525b" }}
+              >
+                {s.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Terminal log */}
+      <div className="rounded-lg bg-[#0a0a0c] border border-[#1e1e22] p-4 font-mono text-[12px] space-y-2.5">
+        {visible.map((s) => (
+          <p key={s.key} className="text-zinc-400 leading-relaxed">
+            <span className="text-[#1a6d52]">&gt;</span> {s.log}
+          </p>
+        ))}
+        <p className="text-zinc-600 flex items-center gap-2">
+          <span className="text-[#1a6d52]">&gt;</span>
+          <span className="inline-block h-3 w-3 rounded-full border-2 border-[#1a6d52] border-t-transparent animate-spin" />
+          Agent thinking…
+        </p>
+      </div>
+    </motion.div>
   );
 }
 
