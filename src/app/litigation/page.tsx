@@ -234,6 +234,7 @@ export default function LitigationPage() {
   const precedents = result?.precedents || [];
   const deadline = result?.deadline || null;
   const tools = result?.tools_called || [];
+  const legalStrategy = result?.legal_strategy || "";
 
   const hasResult = result && !result.error;
 
@@ -435,6 +436,26 @@ export default function LitigationPage() {
                       {TOOL_LABELS[t] || t}
                     </span>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {/* AI Legal Strategy — the agent's reasoning */}
+            {legalStrategy && (
+              <div className="dark-card rounded-xl p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <Sparkles className="h-4 w-4 text-[#1a6d52]" />
+                  <p className="text-sm font-semibold text-zinc-200">
+                    AI Legal Strategy
+                  </p>
+                  <span className="text-[10px] text-zinc-600 ml-auto">
+                    Synthesized by Gemini from notice claims, ledger evidence &amp; precedents
+                  </span>
+                </div>
+                <div className="rounded-lg bg-[#0a0a0c] border border-[#1e1e22] p-4">
+                  <p className="text-[13px] leading-relaxed text-zinc-300 whitespace-pre-wrap">
+                    {legalStrategy}
+                  </p>
                 </div>
               </div>
             )}
