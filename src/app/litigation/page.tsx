@@ -236,7 +236,7 @@ export default function LitigationPage() {
                   />
                 </Link>
                 <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[#1a6d52] bg-[#1a6d52]/10 px-2 py-0.5 rounded-full">
-                  Live Demo · Google ADK Agent
+                  Live Demo · Google ADK + Vertex AI RAG Engine
                 </span>
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-50">

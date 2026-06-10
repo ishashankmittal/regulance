@@ -11,6 +11,7 @@ import {
   MessageSquare,
   ShieldBan,
   FileCheck,
+  Sparkles,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -218,6 +219,18 @@ export function Hero() {
 
       <Container className="relative z-10 py-24 lg:py-32">
         <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 flex justify-center"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#1a6d52]/25 bg-[#1a6d52]/10 px-3 py-1 text-[11px] font-medium text-[#238c6a]">
+              <Sparkles className="h-3 w-3" />
+              Built with Google AI — Agent Development Kit + Vertex AI RAG Engine
+            </span>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -248,20 +261,18 @@ export function Hero() {
           >
             <Button
               size="lg"
-              onClick={() => (window.location.href = "/waitlist")}
+              onClick={() => (window.location.href = "/litigation")}
               className="group"
             >
-              Get Early Access
+              Try the GST Litigation Agent
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Button>
             <Button
               variant="ghost"
               size="lg"
-              onClick={() =>
-                (window.location.href = "mailto:shashank.kumar@regulance.co.in")
-              }
+              onClick={() => (window.location.href = "/waitlist")}
             >
-              Talk to Founders
+              Get Early Access
             </Button>
           </motion.div>
 
@@ -269,20 +280,11 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-5"
+            className="mt-4"
           >
-            <button
-              onClick={() => (window.location.href = "/msme-tracker")}
-              className="group inline-flex flex-col items-center gap-0.5 cursor-pointer bg-transparent border-none"
-            >
-              <span className="text-sm font-medium text-[#1a6d52] group-hover:text-[#238c6a] transition-colors flex items-center gap-1.5">
-                Try Section 43B(h) Tracker
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-              <span className="text-[10px] text-zinc-600">
-                No login required
-              </span>
-            </button>
+            <span className="text-[11px] text-zinc-600">
+              No login required · Powered by Google ADK + Vertex AI RAG Engine
+            </span>
           </motion.div>
         </div>
 

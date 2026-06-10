@@ -73,38 +73,38 @@ const cards = [
     ),
   },
   {
-    title: "Scrutiny Defender.",
+    title: "GST Litigation Agent.",
     description:
-      "Upload an ASMT-10 notice. Our AI cross-references historic databases, past case law, and your ledger data to auto-draft the legal defense in minutes.",
+      "Upload an ASMT-10 notice. An autonomous agent built on Google's Agent Development Kit reads the claims, searches CBIC circulars and AAR rulings through Vertex AI RAG Engine, cross-references your ledger, and drafts the reply in minutes.",
     icon: Shield,
-    tag: "LEGAL DEFENSE",
+    tag: "GOOGLE ADK · RAG ENGINE",
     visual: (
       <div className="mt-6 bg-[#0a0a0c] border border-[#1e1e22] rounded-lg p-4 text-xs font-mono">
         <div className="flex items-center gap-2 text-zinc-500 mb-3">
           <Shield className="h-3.5 w-3.5 text-[#1a6d52]" />
-          <span>defense_brief.pdf — Generated</span>
+          <span>asmt-11_reply.pdf — Generated</span>
         </div>
         <div className="space-y-1.5 text-zinc-500">
           <p>
-            <span className="text-zinc-700">01</span> &nbsp;Subject: Response to
-            ASMT-10 Scrutiny Notice
+            <span className="text-zinc-700">01</span> &nbsp;Agent reads notice —
+            ASMT-10 claims extracted
           </p>
           <p>
-            <span className="text-zinc-700">02</span> &nbsp;Discrepancy: ITC
-            mismatch identified by department
+            <span className="text-zinc-700">02</span> &nbsp;Computes statutory
+            response deadline
           </p>
           <p>
-            <span className="text-zinc-700">03</span> &nbsp;Defense: Timing
-            difference — vendor filed amendment
+            <span className="text-zinc-700">03</span> &nbsp;Cross-references your
+            ledger for each invoice
           </p>
           <p>
-            <span className="text-zinc-700">04</span> &nbsp;Evidence: Supporting
-            documents auto-attached
+            <span className="text-zinc-700">04</span> &nbsp;Searches precedents
+            via Vertex AI RAG Engine
           </p>
           <p>
             <span className="text-zinc-700">05</span>{" "}
-            &nbsp;Precedent:{" "}
-            <span className="text-[#1a6d52]">Relevant case law cited</span>
+            &nbsp;Drafts reply:{" "}
+            <span className="text-[#1a6d52]">CBIC circular &amp; AAR ruling cited</span>
           </p>
         </div>
       </div>

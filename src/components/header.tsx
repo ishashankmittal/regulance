@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 const navigation = [
   { name: "System", href: "#system" },
   { name: "Infrastructure", href: "#moat" },
-  { name: "43B(h) Tracker", href: "/msme-tracker", highlight: true },
+  { name: "Litigation Agent", href: "/litigation", highlight: true },
 ];
 
 export function Header() {

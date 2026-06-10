@@ -13,6 +13,9 @@ export function Footer() {
             <span className="text-xs text-zinc-700">
               &copy; {new Date().getFullYear()}
             </span>
+            <span className="hidden sm:inline text-[11px] text-zinc-700">
+              Built on Google Cloud · ADK · Vertex AI
+            </span>
           </div>
           <div className="flex items-center gap-6">
             <Link
